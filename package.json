@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "name": "api-alunos",
+  "version": "1.0.0",
+  "description": "API usando Node.js e Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsantostiago/fullstack-api.git"
+  },
+  "keywords": [],
+  "author": "Tiago Bezerra dos Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bsantostiago/fullstack-api/issues"
+  },
+  "homepage": "https://github.com/bsantostiago/fullstack-api#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
