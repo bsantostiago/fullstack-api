@@ -31,6 +31,7 @@ function ler( res ){
 function inserir(aluno, res) {
     const sql = "INSERT INTO alunos SET ?";
 
+    // aluno: é um objeto contendo os dados do novo aluno a ser inserido
     conexao.query(sql, aluno, (erro) => {
         if(erro) {
             res.status(400).json(erro.code);
@@ -54,6 +55,7 @@ function lerUm(id, res){
         if(erro){
             res.status(400).json(erro.code);
         } else {
+            /* resultados[0]: representa o único objeto deste array */
             res.status(200).json(resultados[0]);
         }
     });
@@ -61,6 +63,9 @@ function lerUm(id, res){
 
 function atualizar(id, aluno, res){
     const sql = "UPDATE alunos SET ? WHERE id = ?";
+
+    /* Quando usamos mais de um parâmetro para a query,
+    eles devem ser colocados em ordem e dentro de um array */
     conexao.query(sql, [aluno, id], (erro, resultados) => {
         if(erro){
             res.status(400).json(erro.code);
@@ -69,6 +74,9 @@ function atualizar(id, aluno, res){
             // res.status(200).json({"status": "atualizado com sucesso"});
 
             // Saída mais detalhada
+            /* Usamos o spread operator (...) para espalhar
+            os dados do objeto aluno dentro do objeto json junto
+            com o id */
             res.status(200).json( {...aluno, id} );
         }
     });
