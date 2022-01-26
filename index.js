@@ -1,5 +1,5 @@
 import express from "express";
-import { ler, inserir, lerUm, atualizar } from './src/aluno.js';
+import { ler, inserir, lerUm, atualizar, excluir } from './src/aluno.js';
 
 const app = express();
 const porta = 2112;
@@ -55,7 +55,9 @@ app.patch('/alunos/:id', (req, res) => {
 
 // DELETE: Endpoint para excluir alunos
 app.delete('/alunos/:id', (req, res) => {
-    res.send(`Excluindo UM aluno`);
+    // res.send(`Excluindo UM aluno`);
+    const id = parseInt(req.params.id);
+    excluir(id, res);
 });
 
 
