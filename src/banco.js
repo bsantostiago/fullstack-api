@@ -9,9 +9,9 @@ const conexao = mysql.createConnection({
 
     /* REMOTO */
     host: 'db4free.net',
-    user: 'admin_api_tiagof',
-    password: 'senac*123',
-    database: 'escola_tiago_fer'
+    user: 'admin_api_tiago',
+    password: 'Senac*123',
+    database: 'escola_tiago'
 });
 
 conexao.connect(erro => {
